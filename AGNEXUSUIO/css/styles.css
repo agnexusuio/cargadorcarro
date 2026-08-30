@@ -1,0 +1,225 @@
+/* AGNEXUSUIO - Custom Styles */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.animation-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+    animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+    animation-delay: 0.6s;
+}
+
+/* Service card hover effects */
+.service-card {
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Client card overlay */
+.client-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.client-card:hover::before {
+    opacity: 1;
+}
+
+/* FAQ accordion */
+.faq-question {
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Header scroll state */
+.header-scrolled {
+    background-color: rgba(10, 22, 40, 0.98) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile menu transitions */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu.hidden {
+    display: none;
+}
+
+/* Form focus states */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #2563eb;
+}
+
+/* Button pulse animation for WhatsApp */
+@keyframes pulse-green {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(16, 185, 129, 0);
+    }
+}
+
+#whatsapp-float {
+    animation: pulse-green 2s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Selection color */
+::selection {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* Image lazy loading fade in */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    header,
+    footer,
+    #whatsapp-float {
+        display: none;
+    }
+    
+    body {
+        background: white;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus visible for better accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Loading skeleton placeholder */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
