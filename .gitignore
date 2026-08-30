@@ -1,28 +1,34 @@
 ```
-# Dependencies
-node_modules/
-
-# Build artifacts
-dist/
-build/
-*.min.js
-*.min.css
-*.bundle.js
-
-# Logs and temp files
-*.log
-*.tmp
+# Compressed files
+*.tar.gz
 
 # Environment
 .env
 .env.local
 *.env.*
 
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
 # Editors
 .vscode/
 .idea/
 
-# OS generated files
+# Dependencies
+.venv/
+venv/
+node_modules/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+dist/
+build/
+target/
+.gradle/
+
+# System files
 .DS_Store
 Thumbs.db
 ```
